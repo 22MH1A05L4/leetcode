@@ -10,16 +10,12 @@ public:
             if (nums[j] == 0) {
                 countZeros++;
             }
-
-            // If count of zeros exceeds allowed flips, shrink the window
             while (countZeros > k) {
                 if (nums[i] == 0) {
                     countZeros--;
                 }
                 i++;
             }
-
-            // Update the maximum length
             maxOnes = max(maxOnes, j - i + 1);
 
             j++;
