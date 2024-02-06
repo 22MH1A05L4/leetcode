@@ -9,11 +9,10 @@ public:
 
 private:
     void combineHelper(int n, int k, int start, vector<int>& current, vector<vector<int>>& result) {
-        if (current.size() == k) {
+        if(current.size() == k){
             result.push_back(current);
             return;
         }
-
         for (int i = start; i <= n - (k - current.size()) + 1; ++i) {
             current.push_back(i);
             combineHelper(n, k, i + 1, current, result);
